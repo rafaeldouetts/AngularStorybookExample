@@ -1,0 +1,26 @@
+# Escolha uma imagem base com Node.js (a versão 16 é comum para projetos com Angular e Storybook)
+FROM node:22.13.0
+
+# Defina o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copie os arquivos package.json e package-lock.json para instalar as dependências
+COPY package*.json ./
+
+# Instale as dependências do projeto
+RUN npm install
+
+# Copie todo o conteúdo do projeto para o container
+COPY . .
+
+# Gere a build do Storybook
+RUN npm run build-storybook
+
+# Instale o http-server globalmente para servir o Storybook
+RUN npm install -g http-server
+
+# Exponha a porta onde o Storybook será servido (padrão é 8080)
+EXPOSE 8080
+
+# Comando para servir o Storybook com http-server após a build
+CMD [ "http-server", "storybook-static", "-p", "8080", "--cors" ]

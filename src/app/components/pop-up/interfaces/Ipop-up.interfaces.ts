@@ -1,5 +1,7 @@
-export interface popUpInterface{
-top:boolean;
-left:boolean; 
+export enum popUpInterface{
+alert, 
+danger, 
+info,
+confirm, 
 }
 

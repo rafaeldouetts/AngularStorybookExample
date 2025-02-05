@@ -2,41 +2,6 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "popUpInterface",
-            "id": "interface-popUpInterface-cdc6806881b34365f81dfb99db7ee219574ca3553ee11fb4dedc5132cc1847c33739d13a7e8cfb7ac31bb4f797875dba5e94f76fded55e3cce2438fcfec1fc0e",
-            "file": "src/app/components/pop-up/interfaces/Ipop-up.interfaces.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface popUpInterface{\r\ntop:boolean;\r\nleft:boolean; \r\n}\r\n\r\n",
-            "properties": [
-                {
-                    "name": "left",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 3
-                },
-                {
-                    "name": "top",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -446,7 +411,7 @@
         },
         {
             "name": "PopUpComponent",
-            "id": "component-PopUpComponent-fc05f7662987a874e752cea6346f38e462b574d339d5abbe30e8d71f404b4efac0d389a63abb06021ff958dc9b7c324d957b7c9e536162ce56fc7887b5960eb1",
+            "id": "component-PopUpComponent-cfd9535c487c82e2caa9d2a42eb2b74d010c6f6b9d0cf76964413e644553a955b954d72f88b6538d7263caf93c7a9ed9ea003e8ba7433267af034a0a3e32ada5",
             "file": "src/app/components/pop-up/pop-up.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -466,67 +431,33 @@
                     "name": "conteudo",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "positions",
+                    "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
-                    "type": "popUpInterface",
+                    "line": 16,
+                    "type": "popUpInterface | undefined",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
+            "propertiesClass": [],
+            "methodsClass": [
                 {
-                    "name": "bottom",
-                    "defaultValue": "true",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
+                    "name": "getModalClass",
+                    "args": [],
                     "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "left",
-                    "defaultValue": "false",
+                    "returnType": "\"alert\" | \"confirm\" | \"info\" | \"danger\" | \"\"",
+                    "typeParameters": [],
+                    "line": 30,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "right",
-                    "defaultValue": "true",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "top",
-                    "defaultValue": "true",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
+                    "deprecationMessage": ""
                 }
             ],
-            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -541,7 +472,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { popUpInterface } from './interfaces/Ipop-up.interfaces';\r\n\r\n@Component({\r\n  selector: 'app-pop-up',\r\n  imports: [CommonModule],\r\n  templateUrl: './pop-up.component.html',\r\n  styleUrl: './pop-up.component.scss'\r\n})\r\nexport class PopUpComponent {\r\n\r\n  // @Input() position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'top-left';\r\n\r\n  @Input() positions?: popUpInterface;\r\n  @Input() conteudo?: string;\r\n\r\n  left:boolean = false;\r\n  right:boolean = true;\r\n  bottom:boolean = true;\r\n  top:boolean = true;\r\n\r\n  constructor()\r\n  {\r\n    if(!this.conteudo)\r\n      this.conteudo =\"conteudo da modal!\"\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { popUpInterface } from './interfaces/Ipop-up.interfaces';\r\n\r\n@Component({\r\n  selector: 'app-pop-up',\r\n  imports: [CommonModule],\r\n  templateUrl: './pop-up.component.html',\r\n  styleUrl: './pop-up.component.scss'\r\n})\r\nexport class PopUpComponent {\r\n\r\n  // @Input() position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'top-left';\r\n\r\n  // @Input() positions?: popUpInterface;\r\n  @Input() type: popUpInterface | undefined;\r\n  @Input() conteudo?: string;\r\n\r\n  // left:boolean = true;\r\n  // right:boolean = false;\r\n  // bottom:boolean = true;\r\n  // top:boolean = true;\r\n\r\n  constructor()\r\n  {\r\n    if(!this.conteudo)\r\n      this.conteudo =\"conteudo da modal!\"\r\n  }\r\n\r\n  getModalClass() {\r\n    switch (this.type) {\r\n      case popUpInterface.alert:\r\n        return 'alert';\r\n      case popUpInterface.confirm:\r\n        return 'confirm';\r\n      case popUpInterface.info:\r\n        return 'info';\r\n      case popUpInterface.danger:\r\n        return 'danger';\r\n      default:\r\n        return '';\r\n    }\r\n  }\r\n}\r\n",
             "styleUrl": "./pop-up.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -552,10 +483,10 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 21
+                "line": 17
             },
             "extends": [],
-            "templateData": "<div class=\"modal\" [ngClass]=\"\r\n{'bottom-left': left,\r\n 'bottom-right' : right,\r\n 'bottom-bottom': bottom, \r\n 'bottom-top': top}\">\r\n    <p>{{conteudo}}</p>\r\n</div>\r\n  "
+            "templateData": "<!-- <div class=\"modal\" [ngClass]=\"\r\n{'bottom-left': left,\r\n 'bottom-right' : right,\r\n 'bottom-bottom': bottom, \r\n 'bottom-top': top}\"> -->\r\n <div class=\"modal\" [ngClass]=\"getModalClass()\">\r\n    <p>{{conteudo}}</p>\r\n</div>\r\n  "
         }
     ],
     "modules": [],
@@ -574,7 +505,39 @@
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "popUpInterface",
+                "childs": [
+                    {
+                        "name": "alert",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "danger",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "info",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "confirm",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/components/pop-up/interfaces/Ipop-up.interfaces.ts"
+            }
+        ],
         "groupedVariables": {
             "src/app/app.config.ts": [
                 {
@@ -590,12 +553,46 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "src/app/components/pop-up/interfaces/Ipop-up.interfaces.ts": [
+                {
+                    "name": "popUpInterface",
+                    "childs": [
+                        {
+                            "name": "alert",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "danger",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "info",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "confirm",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/components/pop-up/interfaces/Ipop-up.interfaces.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 10,
+        "count": 11,
         "status": "low",
         "files": [
             {
@@ -618,21 +615,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/pop-up/interfaces/Ipop-up.interfaces.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "popUpInterface",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/components/pop-up/pop-up.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PopUpComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

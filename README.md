@@ -12,7 +12,9 @@ npm run storybookn
 ```bash
 npm run build-storybook
 ```
-
+![Documentação](Capturar.PNG)!
+![Confirm](confirm.PNG)
+![alert](alert.PNG)
 ## 4. servir storybook static 
 ```bash
 npx http-server storybook-static

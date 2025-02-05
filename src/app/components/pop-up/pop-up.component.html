@@ -1,8 +1,9 @@
-<div class="modal" [ngClass]="
+<!-- <div class="modal" [ngClass]="
 {'bottom-left': left,
  'bottom-right' : right,
  'bottom-bottom': bottom, 
- 'bottom-top': top}">
+ 'bottom-top': top}"> -->
+ <div class="modal" [ngClass]="getModalClass()">
     <p>{{conteudo}}</p>
 </div>
   

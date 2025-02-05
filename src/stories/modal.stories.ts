@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { PopUpComponent } from '../app/components/pop-up/pop-up.component';
+import { popUpInterface } from '../app/components/pop-up/interfaces/Ipop-up.interfaces';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
@@ -20,47 +21,37 @@ export default meta;
 type Story = StoryObj<PopUpComponent>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const TopLeft: Story = {
+export const popUpAlert: Story = {
   args: {
-    bottom: false,
-    top: true,
-    left: true,
-    conteudo: 'teste'
+    conteudo: 'teste',
+    type: popUpInterface.alert
 
     // primary: true,
     // label: 'Button',
   },
 };
 
-export const bottomLeft: Story = {
+export const popUpConfirm: Story = {
   args: {
-    bottom: true,
-    top: false,
-    left: true,
+    conteudo: 'teste',
+    type: popUpInterface.confirm
   },
 };
 
-export const TopRight: Story = {
+export const popUpDanger: Story = {
   args: {
-    bottom: false,
-    top: true,
-    left: false,
-    right: true,
-    conteudo: 'teste'
+    conteudo: 'teste',
+    type: popUpInterface.danger
 
     // primary: true,
     // label: 'Button',
   },
 };
 
-export const BottomRight: Story = {
+export const popUpInfo: Story = {
   args: {
-    bottom: true,
-    top: false,
-    left: false,
-    right: true,
-    conteudo: 'teste'
-
+    conteudo: 'teste',
+    type: popUpInterface.info
     // primary: true,
     // label: 'Button',
   },
